@@ -25,6 +25,7 @@ func main() {
 	server.Use(gin.Recovery(), gin.Logger(), middlewares.Logger(), middlewares.BasicAuth())
 
 	server.GET("/videos", func (ctx *gin.Context)  {
+	
 		ctx.JSON(200, videoController.FindAll())
 	})
 
